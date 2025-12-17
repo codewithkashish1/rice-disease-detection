@@ -3,23 +3,33 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 import os
 
-model = tf.keras.models.load_model("rice_disease_model.h5")
+# Load the trained model
+model = tf.keras.models.load_model('rice_disease_model.h5')
 
-class_names = ['Bacterial Leaf Blight', 'Healthy_leaf', 'Rice', 'Rice Blast', 'Tungro']
+# Path to test images
+test_dir = os.path.join(os.getcwd(), 'test_images')
 
-test_folder = "test_images"
+# Get class labels from training folder names
+class_labels = sorted(os.listdir(os.path.join(os.getcwd(), 'train_data')))
 
-for img_file in os.listdir(test_folder):
-    img_path = os.path.join(test_folder, img_file)
-    
-    img = image.load_img(img_path, target_size=(224, 224))
-    x = image.img_to_array(img) / 255.0
-    x = np.expand_dims(x, axis=0)
-    
-    pred = model.predict(x)
-    class_idx = np.argmax(pred)
-    confidence = pred[0][class_idx] * 100
-    
-    print(f"Image: {img_file}")
-    print(f"Predicted Class: {class_names[class_idx]}")
-    print(f"Confidence: {confidence:.2f}%\n")
+# Function to predict a single image
+def predict_image(img_path):
+    img = image.load_img(img_path, target_size=(128,128))
+    img_array = image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array /= 255.0  # Normalize
+
+    predictions = model.predict(img_array)
+    class_index = np.argmax(predictions[0])
+    confidence = predictions[0][class_index] * 100
+    predicted_class = class_labels[class_index]
+
+    print(f"📸 Image: {os.path.basename(img_path)}")
+    print(f"🧪 Predicted Disease: {predicted_class}")
+    print(f"📊 Confidence: {confidence:.2f}%")
+    print("----------------------------------------")
+
+# Predict all images in test folder
+for img_file in os.listdir(test_dir):
+    if img_file.lower().endswith(('.jpg', '.png', '.jpeg')):
+        predict_image(os.path.join(test_dir, img_file))
