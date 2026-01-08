@@ -12,6 +12,7 @@ from config.class_names import RICE_CLASSES, PULSES_CLASSES
 from services.rice_predictor import RicePredictor
 from services.pulses_predictor import PulsesPredictor
 from services.chatbot import CropChatbot
+import streamlit.components.v1 as components
 
 # --------------------------------------------------
 # PAGE CONFIG
@@ -21,6 +22,7 @@ st.set_page_config(
     page_icon="🌾",
     layout="wide"
 )
+
 st.markdown("""
 <style>
 
@@ -72,9 +74,6 @@ h2, h3 {
 </style>
 """, unsafe_allow_html=True)
 
-
-
-
 # --------------------------------------------------
 # LOAD CHATBOT
 # --------------------------------------------------
@@ -101,7 +100,7 @@ rice_predictor, pulses_predictor = load_models()
 st.sidebar.title("🌾 Navigation")
 menu = st.sidebar.radio(
     "Go to",
-    ["Home", "Disease Prediction", "Chatbot", "About"]
+    ["Home", "Disease Prediction", "Chatbot", "Chatbot Botpress", "About"]
 )
 
 # --------------------------------------------------
@@ -163,6 +162,27 @@ elif menu == "Chatbot":
     if user_question:
         response = chatbot.get_response(user_question)
         st.success(response)
+
+# --------------------------------------------------
+# BOTPRESS CHATBOT PAGE
+# --------------------------------------------------
+elif menu == "Chatbot Botpress":
+    st.header("🤖 Crop Assistant Chatbot")
+
+    st.write("Ask about crop diseases, symptoms, prevention, and treatment.")
+
+    st.components.v1.html("""
+    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/01/08/02/20260108021422-EKVCT9LA.js"></script>
+
+    <style>
+      iframe {
+        width: 100% !important;
+        height: 100vh !important;
+        border: none;
+      }
+    </style>
+    """, height=1000)
 
 # --------------------------------------------------
 # ABOUT PAGE
