@@ -1,0 +1,13 @@
+crop,disease,medicine_name,medicine_type,dosage,application_method,frequency,precautions,source,justification,recommendation
+Rice,Rice Blast,Tricyclazole,Fungicide,0.6 g/L,Foliar spray,2 sprays at 10-day interval,Avoid spraying during rain,ICAR,"Fungal pathogen affects leaves, reduces yield.","Remove infected leaves, Apply Tricyclazole as foliar spray."
+Rice,Bacterial Leaf Blight,"Streptocycline + Copper Oxychloride","Antibiotic + Fungicide",0.1 g + 2.5 g/L,Foliar spray,2 sprays,Wear gloves and mask,ICAR,"Bacteria causes leaf lesions and wilting.","Remove infected leaves, Spray Streptocycline + Copper Oxychloride."
+Rice,Brown Spot,Mancozeb,Fungicide,2.5 g/L,Foliar spray,2–3 sprays,Avoid excess dosage,FAO,"Fungal spots reduce photosynthesis and yield.","Spray Mancozeb on affected areas, Remove severely affected leaves."
+Rice,Sheath Blight,Validamycin,Fungicide,2 ml/L,Foliar spray,2 sprays,Do not mix with other chemicals,ICAR,"Sheath rot spreads quickly under wet conditions.","Spray Validamycin, Avoid waterlogging."
+Rice,Leaf Smut,Propiconazole,Fungicide,1 ml/L,Foliar spray,2 sprays,Keep away from children,FAO,"Fungus infects leaf tips causing black pustules.","Apply Propiconazole, Remove infected leaves."
+Pulses,Leaf Spot,Mancozeb,Fungicide,2.5 g/L,Foliar spray,2 sprays,Wash hands after use,ICAR,"Leaf spots reduce photosynthesis and growth.","Spray Mancozeb, Remove infected leaves."
+Pulses,Powdery Mildew,Sulfur Dust,Fungicide,25 kg/ha,Dusting,Once at early stage,Avoid inhalation,FAO,"Powdery mildew reduces leaf area and yield.","Apply Sulfur Dust on affected plants."
+Pulses,Root Rot,Carbendazim,Fungicide,1 g/L,Soil drenching,Single application,Do not overuse,ICAR,"Fungal rot damages roots and stunts growth.","Drench soil with Carbendazim."
+Pulses,Yellow Mosaic Virus,Imidacloprid,Insecticide,0.3 ml/L,Foliar spray,2 sprays,Avoid spraying during flowering,ICAR,"Viral infection transmitted by whiteflies.","Spray Imidacloprid to control vectors."
+Pulses,Rust,Difenoconazole,Fungicide,1 ml/L,Foliar spray,2 sprays,Use protective clothing,FAO,"Rust reduces photosynthetic area and yield.","Spray Difenoconazole, Remove infected leaves."
+Pepper,Bacterial_spot,"Streptocycline + Copper Oxychloride","Antibiotic + Fungicide",0.1 g + 2.5 g/L,Foliar spray,2 sprays,Wear gloves and mask,ICAR,"Bacterial spots cause leaf lesions","Remove infected leaves, Apply antibiotics"
+Rice,Tungro,Imidacloprid,Insecticide,0.3 ml/L,Foliar spray,2 sprays at 10–15 day interval,Avoid spraying during flowering,IRRI,"Tungro is a viral disease transmitted by green leafhoppers causing yellowing and stunted growth.","Control leafhopper vectors, remove infected plants, and spray Imidacloprid to reduce spread."
